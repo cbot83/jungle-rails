@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
-
-before_filter :authorize
+  before_filter :authorize
   
   def create
     @product = Product.find(params[:product_id])
@@ -25,5 +24,3 @@ before_filter :authorize
   end
 
 end
-
-

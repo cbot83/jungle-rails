@@ -154,6 +154,4 @@ Review.create(
   :rating => 3
 ) 
 
-
-
 puts "DONE!"

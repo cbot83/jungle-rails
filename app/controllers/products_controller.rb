@@ -9,9 +9,4 @@ class ProductsController < ApplicationController
     @review = Review.new
   end
 
-
-    def delete
-    raise "Yay, I'm deleting in products!"
-  end
-
 end
