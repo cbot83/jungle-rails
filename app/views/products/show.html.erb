@@ -26,6 +26,34 @@
       </div>
     </div>
 
+    <%= form_for [@product, @review] do |f| %>
+
+    Description:<%= f.text_area :description %>
+    Rating:<%= f.select(:rating, options_for_select(1..5)) %><br />
+    <%= f.submit %>
+    <% end %>
+   <% @product.reviews.reverse_each do |review| %>
+
+   <div>
+   <strong>User:</strong> <%= review.user.first_name %> 
+  </div>
+  <div>
+   <strong>Description:</strong> <%= review.description %>
+     </div>
+  <div>
+   <strong>Rating:</strong> <%= review.rating %>
+  </div>
+  <% if current_user == review.user %>
+  <div>
+
+<%= link_to fa_icon('trash'), review, method: :delete, data: { confirm: "Are you sure?" }  %>
+    
+
+  </div>
+  <% end %>
+  <% end %>
+
+
   </article>
 
 </section>

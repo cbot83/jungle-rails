@@ -134,7 +134,6 @@ cat3.products.create!({
 })
 
 User.create(
-  :id => 1, 
   :first_name => 'craig', 
   :last_name => 'rice', 
   :email => 'joe@aol.com', 
@@ -142,7 +141,6 @@ User.create(
 )
 
 Review.create(
-  :id => 1, 
   :product_id => 1, 
   :user_id => 1, 
   :description => 'descibed', 
@@ -150,7 +148,6 @@ Review.create(
 ) 
 
 Review.create(
-  :id => 2, 
   :product_id => 4, 
   :user_id => 1, 
   :description => 'descibed another thing', 
