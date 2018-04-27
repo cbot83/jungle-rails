@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -131,6 +132,31 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
+
+User.create(
+  :id => 1, 
+  :first_name => 'craig', 
+  :last_name => 'rice', 
+  :email => 'joe@aol.com', 
+  :password => 'password'
+)
+
+Review.create(
+  :id => 1, 
+  :product_id => 1, 
+  :user_id => 1, 
+  :description => 'descibed', 
+  :rating => 5
+) 
+
+Review.create(
+  :id => 2, 
+  :product_id => 4, 
+  :user_id => 1, 
+  :description => 'descibed another thing', 
+  :rating => 3
+) 
+
 
 
 puts "DONE!"
