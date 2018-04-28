@@ -28,24 +28,27 @@
 
     <div>
       <%= form_for [@product, @review] do |f| %>
-        Description: <%= f.text_area :description %>
-        Rating: <%= f.select(:rating, options_for_select(1..5)) %><br />
-        <%= f.submit %>
+        Tell us what you think:<br /> <%= f.text_area :description, class: 'review' %><br />
+        Rating: <%= f.select(:rating, options_for_select(1..5)) %><br /><br />
+        <%= f.submit  "Submit", class: 'reviewbutton' %><br /><br />
       <% end %>
     </div>
 
     <div>
       <% @product.reviews.reverse_each do |review| %>
-        <strong>User:</strong> <%= review.user.first_name %> 
-        <strong>Description:</strong> <%= review.description %>
-        <strong>Rating:</strong> <%= review.rating %>
-    </div>
+        <div class="writtenreview">
+          <strong>User:</strong> <%= review.user.first_name %> <br/>
+          <strong>Description:</strong> <%= review.description %> <br />
+          <strong>Rating:</strong> <%= review.rating %> <br />
+        
 
-      <div>
-        <% if current_user == review.user %>
-          <%= link_to fa_icon('trash'), review, method: :delete, data: { confirm: "Are you sure?" }  %>
-        <% end %>
-      <% end %>
+      
+          <% if current_user == review.user %>
+            <%= link_to fa_icon('trash'), review, method: :delete, data: { confirm: "Are you sure?" }  %>
+
+        </div>
+          <% end %>
+        <% end %>       
       </div>
 
   </article>

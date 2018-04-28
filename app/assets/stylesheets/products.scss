@@ -83,6 +83,16 @@ main section.categories-show {
 
 main section.products-show {
 
+  .review {
+    width: 300px;
+    height: 120px;
+    border: 3px solid #cccccc;
+    padding: 5px;
+    font-family: Tahoma,
+    sans-serif;
+  }
+
+
 
   .product-detail {
     img.main-img {
@@ -90,5 +100,7 @@ main section.products-show {
     }
   }
 }
+
+
 
 
