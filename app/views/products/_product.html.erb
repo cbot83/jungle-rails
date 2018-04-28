@@ -15,13 +15,6 @@
       <p><strong>Average rating:</strong> <%= product.reviews.average(:rating).round(1)%> / 5</p>
     <% end %>
   </p>
-  
-  
-
-
-
-
-
   <footer class="actions">
     <%= link_to add_item_cart_path(product_id: product.id), class: 'btn btn-primary', method: :put do %>
       <%= fa_icon "shopping-cart", text: 'Add' %>
@@ -30,13 +23,12 @@
       Details &raquo;
     <% end %>
   </footer>
-
+  <%# sold out flag when quantity is zero %>
   <% if product.quantity == 0 %>
     <aside class="soldout">
       SOLD OUT!
     </aside>
   <% end %>
-
   <aside class="price">
     <%= humanized_money_with_symbol product.price %>
   </aside>
