@@ -4,7 +4,11 @@
     <h1>My Cart</h1>
   </header>
 
-  <% if @cart.present? == true %>
+  <% if cart.size == 0 %>
+
+    <p>a friendly message about how it is empty and link to the <a href="/"> home page.</a> </p>
+
+  <% else %>
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -54,10 +58,4 @@
 
 </section>
 
-<% else %>
-
-<p>a friendly message about how it is empty and link to the <a href="/"> home page.</a> </p>
-
 <% end %>
-
-

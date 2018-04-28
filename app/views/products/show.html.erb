@@ -35,21 +35,17 @@
     </div>
 
     <div>
-      <% @product.reviews.reverse_each do |review| %>
+      <% @product.reviews.reverse_each do |review| %>  
         <div class="writtenreview">
           <strong>User:</strong> <%= review.user.first_name %> <br/>
           <strong>Description:</strong> <%= review.description %> <br />
           <strong>Rating:</strong> <%= review.rating %> <br />
-        
-
-      
           <% if current_user == review.user %>
             <%= link_to fa_icon('trash'), review, method: :delete, data: { confirm: "Are you sure?" }  %>
-
-        </div>
           <% end %>
-        <% end %>       
-      </div>
+        </div>
+      <% end %>       
+    </div>
 
   </article>
   
