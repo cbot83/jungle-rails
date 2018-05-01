@@ -11,6 +11,9 @@ require "capybara/rails"
 require "capybara/rspec"
 require "capybara/poltergeist"
 
+
+
+
 Capybara.javascript_driver = :poltergeist
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -26,6 +29,13 @@ Capybara.javascript_driver = :poltergeist
 # require only the support files necessary.
 #
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, 
+   phantomjs_options: ['--ssl-protocol=TLSv1.2']
+  )
+end
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.

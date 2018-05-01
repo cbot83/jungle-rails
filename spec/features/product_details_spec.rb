@@ -22,6 +22,7 @@ RSpec.feature "Visitor navigates to product details", type: :feature, js: true d
     visit root_path
     # need a new act to click on product
     visit '/products/2'
+    # find('article.product').click_link(first)
 
     # DEBUG
     save_screenshot 'products.png'
