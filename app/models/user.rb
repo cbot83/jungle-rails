@@ -6,12 +6,9 @@ class User < ActiveRecord::Base
   validates :password, :length => { :minimum => 8 }
   before_save :downcase_email
 
-   def downcase_email
-      self.email.downcase!
-   end
-
-
-  
+  def downcase_email
+    self.email.downcase!
+  end
 
   def self.authenticate_with_credentials(user, password)
     user = User.find_by_email(user.strip.downcase)
@@ -20,8 +17,5 @@ class User < ActiveRecord::Base
     else
       user.authenticate(password)
     end
-    
-
   end
-
 end
